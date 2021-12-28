@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Box.tscn" type="PackedScene" id=1]
+
+[node name="5x5" type="Node2D"]
+
+[node name="00" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 32 )
+
+[node name="01" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 32 )
+
+[node name="02" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 32 )
+
+[node name="03" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 32 )
+
+[node name="04" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 32 )
+
+[node name="10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 48 )
+
+[node name="11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 48 )
+
+[node name="12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 48 )
+
+[node name="13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 48 )
+
+[node name="14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 48 )
+
+[node name="20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 64 )
+
+[node name="21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 64 )
+
+[node name="22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 64 )
+
+[node name="23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 64 )
+
+[node name="24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 64 )
+
+[node name="30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 80 )
+
+[node name="31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 80 )
+
+[node name="32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 80 )
+
+[node name="33" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 80 )
+
+[node name="34" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 80 )
+
+[node name="40" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 96 )
+
+[node name="41" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 96 )
+
+[node name="42" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 96 )
+
+[node name="43" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 96 )
+
+[node name="44" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 96 )

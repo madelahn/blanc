@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://square.gd" type="Script" id=1]
+[ext_resource path="res://assets/grid/blank.png" type="Texture" id=2]
+[ext_resource path="res://assets/grid/mark.png" type="Texture" id=3]
+[ext_resource path="res://assets/grid/fill.png" type="Texture" id=4]
+[ext_resource path="res://assets/grid/hover.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "filled",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "blank",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "marked",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 7.5 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "none",
+"speed": 5.0
+} ]
+
+[node name="Box" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="square" type="AnimatedSprite" parent="."]
+position = Vector2( 8, 8 )
+frames = SubResource( 1 )
+animation = "blank"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 8.5 )
+shape = SubResource( 2 )
+
+[node name="hover" type="AnimatedSprite" parent="."]
+position = Vector2( 8, 8 )
+frames = SubResource( 3 )
+animation = "none"
+
+[connection signal="mouse_entered" from="." to="." method="_on_Box_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Box_mouse_exited"]

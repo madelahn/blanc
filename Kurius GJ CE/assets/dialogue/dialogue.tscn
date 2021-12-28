@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/dialogue/dialogue.gd" type="Script" id=1]
+[ext_resource path="res://assets/dialogue/textbox.png" type="Texture" id=2]
+[ext_resource path="res://assets/Abaddon Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/dialogue/portraits/player_n.png" type="Texture" id=4]
+[ext_resource path="res://assets/dialogue/portraits/gran.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gran",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "player_n",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="dialogue" type="CanvasLayer"]
+script = ExtResource( 1 )
+dialogue = "res://assets/dialogue/json/level1.json"
+
+[node name="textbox" type="NinePatchRect" parent="."]
+margin_right = 402.0
+margin_bottom = 84.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0.081, 0, 150.001, 26.014 )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="portrait" type="Panel" parent="textbox"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 78.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="faces" type="AnimatedSprite" parent="textbox/portrait"]
+position = Vector2( 35.25, 35.5 )
+scale = Vector2( 0.163991, 0.206395 )
+frames = SubResource( 3 )
+animation = "New Anim"
+
+[node name="dialogue" type="RichTextLabel" parent="textbox"]
+margin_left = 82.0
+margin_top = 8.0
+margin_right = 391.0
+margin_bottom = 77.0
+theme = SubResource( 2 )
+text = "Message"
+__meta__ = {
+"_edit_use_anchors_": false
+}

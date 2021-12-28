@@ -25,7 +25,6 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=1]
-size = 14
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 2
@@ -36,7 +35,6 @@ default_font = SubResource( 1 )
 
 [node name="dialogue" type="CanvasLayer"]
 script = ExtResource( 1 )
-dialogue = "res://assets/dialogue/json/level1.json"
 
 [node name="textbox" type="NinePatchRect" parent="."]
 margin_right = 402.0
@@ -73,6 +71,7 @@ margin_right = 391.0
 margin_bottom = 77.0
 theme = SubResource( 2 )
 text = "Message"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

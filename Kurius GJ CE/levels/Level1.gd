@@ -6,10 +6,12 @@ var gridy = 5
 var win = false
 
 func _ready():
-	print('hi')
+	find_dialogue()
 
 func _process(_delta):
 	check_solution()
+	if $dialogue/textbox.visible == true:
+		$B1.set_process_input(false)
 
 onready var solution = [ [0, 1, 1, 1, 0],
 						 [1, 1, 1, 0, 1],
@@ -25,6 +27,13 @@ onready var board = [ [$B1/'00', $B1/'01', $B1/'02', $B1/'03', $B1/'04'],
 					  [$B1/'40', $B1/'41', $B1/'42', $B1/'43', $B1/'44'],
 					]
 
+
+# Run intro dialogue.
+func find_dialogue():
+	var l1_dialogue = get_node_or_null('dialogue')
+	
+	if l1_dialogue:
+		l1_dialogue.play()
 
 
 func check_solution():

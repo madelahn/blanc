@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://square.gd" type="Script" id=1]
 [ext_resource path="res://assets/grid/blank.png" type="Texture" id=2]
 [ext_resource path="res://assets/grid/mark.png" type="Texture" id=3]
 [ext_resource path="res://assets/grid/fill.png" type="Texture" id=4]
 [ext_resource path="res://assets/grid/hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/Button_Click.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/Mistake.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,6 +58,13 @@ shape = SubResource( 2 )
 position = Vector2( 8, 8 )
 frames = SubResource( 3 )
 animation = "none"
+
+[node name="left_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="right_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Box_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Box_mouse_exited"]

@@ -20,17 +20,22 @@ func on_click():
 	if $square.animation == 'blank':
 		$square.animation = 'filled'
 		filled = 1
+		
 	else:
 		$square.animation = 'blank'
 		filled = 0
+	$left_click.play()
 
 
 # Marks the square when right clicked (if you know the square can't be filled).
 func on_rightclick():
 	if $square.animation == 'blank':
 		$square.animation = 'marked'
+		
 	else:
 		$square.animation = 'blank'
+	filled = 0
+	$right_click.play()
 
 
 # Highlights the square when hovered over with the mouse.
@@ -43,3 +48,8 @@ func _on_Box_mouse_entered():
 func _on_Box_mouse_exited():
 	$hover.animation = 'none'
 	pass
+
+
+func set_active(active):
+	set_process(active)
+	set_process_input(active)

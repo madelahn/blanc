@@ -33,7 +33,7 @@ func next_line():
 	
 	if line >= len(dialogues):
 		$textbox.visible = false
-		return 
+		return
 		
 	$textbox/portrait/faces.animation = dialogues[line]['face']
 	$textbox/dialogue.text = dialogues[line]['text']

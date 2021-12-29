@@ -1,0 +1,477 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://MenuPics/sky.png" type="Texture" id=1]
+[ext_resource path="res://MenuPics/clouds.png" type="Texture" id=2]
+[ext_resource path="res://MenuPics/snow.png" type="Texture" id=3]
+[ext_resource path="res://MenuPics/trees.png" type="Texture" id=4]
+[ext_resource path="res://MenuPics/mountains.png" type="Texture" id=5]
+[ext_resource path="res://AnimationPlayer.gd" type="Script" id=6]
+[ext_resource path="res://Menu.gd" type="Script" id=7]
+[ext_resource path="res://MenuPics/snowFlakes.png" type="Texture" id=8]
+[ext_resource path="res://MenuPics/greenButton.png" type="Texture" id=9]
+[ext_resource path="res://MenuPics/greenButtonHovered.png" type="Texture" id=10]
+[ext_resource path="res://MenuPics/redButton.png" type="Texture" id=11]
+[ext_resource path="res://MenuPics/redButtonHovered.png" type="Texture" id=12]
+[ext_resource path="res://Sounds/Button_Click.wav" type="AudioStream" id=13]
+[ext_resource path="res://Abaddon_Fonts_v1.2/Abaddon Bold.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Clouds"
+length = 120.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( -80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("clouds1:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240, 70 ), Vector2( 80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("clouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("clouds1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("snow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("snow1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Trees"
+length = 40.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("snow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( 240, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snow1:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ), Vector2( 80, 70 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("trees:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( 240, 70 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("trees1:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 40 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ), Vector2( 80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("trees:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("trees1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Trees"
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("mountains:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mountains1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "mountains"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("mountains:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( 240, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mountains1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 70 ), Vector2( 80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Flakes"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("snowFlakes1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, -70 ), Vector2( 80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snowFlakes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( 80, 210 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snowFlakes1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, -70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snowFlakes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[sub_resource type="BitmapFont" id=12]
+
+[sub_resource type="Theme" id=13]
+default_font = SubResource( 12 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 9
+font_data = ExtResource( 14 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 1 )
+
+[node name="mountains" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 5 )
+
+[node name="mountains1" type="Sprite" parent="."]
+position = Vector2( -80, 70 )
+texture = ExtResource( 5 )
+
+[node name="snow" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 3 )
+
+[node name="snow1" type="Sprite" parent="."]
+position = Vector2( -80, 70 )
+texture = ExtResource( 3 )
+
+[node name="trees" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 4 )
+
+[node name="trees1" type="Sprite" parent="."]
+position = Vector2( -80, 70 )
+texture = ExtResource( 4 )
+
+[node name="clouds" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 2 )
+
+[node name="clouds1" type="Sprite" parent="."]
+position = Vector2( -80, 70 )
+texture = ExtResource( 2 )
+
+[node name="snowFlakes" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 8 )
+
+[node name="snowFlakes1" type="Sprite" parent="."]
+position = Vector2( 80, -70 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Clouds = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+anims/Trees = SubResource( 3 )
+script = ExtResource( 6 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/Trees = SubResource( 4 )
+"anims/Trees 2" = SubResource( 3 )
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/mountains = SubResource( 7 )
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+anims/Flakes = SubResource( 8 )
+anims/RESET = SubResource( 9 )
+
+[node name="AnimationPlayer5" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer4")
+anims/RESET = SubResource( 10 )
+anims/fade = SubResource( 11 )
+
+[node name="menu" type="HBoxContainer" parent="."]
+margin_left = 24.0
+margin_top = 62.0
+margin_right = 136.0
+margin_bottom = 74.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TextureButton" parent="menu"]
+margin_right = 54.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+
+[node name="CreditsButton" type="TextureButton" parent="menu"]
+margin_left = 58.0
+margin_right = 112.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+
+[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 38.0
+margin_top = 64.0
+margin_right = 81.0
+margin_bottom = 82.0
+theme = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 93.0
+margin_top = 64.0
+margin_right = 136.0
+margin_bottom = 82.0
+theme = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="menu/StartButton" to="." method="_on_StartButton_pressed"]

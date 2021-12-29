@@ -40,11 +40,11 @@ func check_solution():
 	if win == false:
 		var new_board = []
 		
-		for x in range(gridx):
+		for y in range(gridy):
 			var new_row = []
 			
-			for y in range(gridy):
-				new_row.append(board[x][y].filled)
+			for x in range(gridx):
+				new_row.append(board[y][x].filled)
 			new_board.append(new_row)
 
 

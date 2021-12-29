@@ -26,9 +26,9 @@ script = SubResource( 1 )
 
 [node name="Level 1" type="Label" parent="."]
 margin_left = 8.0
-margin_top = 4.0
+margin_top = 3.0
 margin_right = 184.0
-margin_bottom = 28.0
+margin_bottom = 27.0
 theme = ExtResource( 3 )
 text = "Level 1 - Ornaments"
 align = 1
@@ -39,19 +39,6 @@ __meta__ = {
 
 [node name="B1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 32 )
-
-[node name="R0" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 64.0
-margin_right = 62.0
-margin_bottom = 80.0
-theme = ExtResource( 3 )
-text = "3"
-align = 2
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="R1" type="Label" parent="."]
 margin_left = 32.0

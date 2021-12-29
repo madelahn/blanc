@@ -1,19 +1,24 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://MenuPics/sky.png" type="Texture" id=1]
-[ext_resource path="res://MenuPics/clouds.png" type="Texture" id=2]
-[ext_resource path="res://MenuPics/snow.png" type="Texture" id=3]
-[ext_resource path="res://MenuPics/trees.png" type="Texture" id=4]
-[ext_resource path="res://MenuPics/mountains.png" type="Texture" id=5]
-[ext_resource path="res://AnimationPlayer.gd" type="Script" id=6]
+[ext_resource path="res://menu/sky.png" type="Texture" id=1]
+[ext_resource path="res://menu/clouds.png" type="Texture" id=2]
+[ext_resource path="res://menu/snow.png" type="Texture" id=3]
+[ext_resource path="res://menu/trees.png" type="Texture" id=4]
+[ext_resource path="res://menu/mountains.png" type="Texture" id=5]
+[ext_resource path="res://Menu/button_text.png" type="Texture" id=6]
 [ext_resource path="res://Menu.gd" type="Script" id=7]
-[ext_resource path="res://MenuPics/snowFlakes.png" type="Texture" id=8]
-[ext_resource path="res://MenuPics/greenButton.png" type="Texture" id=9]
-[ext_resource path="res://MenuPics/greenButtonHovered.png" type="Texture" id=10]
-[ext_resource path="res://MenuPics/redButton.png" type="Texture" id=11]
-[ext_resource path="res://MenuPics/redButtonHovered.png" type="Texture" id=12]
-[ext_resource path="res://Sounds/Button_Click.wav" type="AudioStream" id=13]
-[ext_resource path="res://Abaddon_Fonts_v1.2/Abaddon Bold.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://menu/snowFlakes.png" type="Texture" id=8]
+[ext_resource path="res://menu/greenButton.png" type="Texture" id=9]
+[ext_resource path="res://menu/greenButtonHovered.png" type="Texture" id=10]
+[ext_resource path="res://menu/redButton.png" type="Texture" id=11]
+[ext_resource path="res://menu/redButtonHovered.png" type="Texture" id=12]
+[ext_resource path="res://assets/audio/Button_Click.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/Blanc.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/logo.png" type="Texture" id=15]
+
+[sub_resource type="GDScript" id=15]
+script/source = "extends Camera2D
+"
 
 [sub_resource type="Animation" id=1]
 resource_name = "Clouds"
@@ -147,6 +152,24 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -80, 70 ), Vector2( 80, 70 ) ]
 }
+
+[sub_resource type="GDScript" id=16]
+script/source = "extends AnimationPlayer
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -289,10 +312,26 @@ tracks/1/keys = {
 "values": [ Vector2( 80, 70 ) ]
 }
 
+[sub_resource type="Animation" id=19]
+resource_name = "fall"
+length = 8.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 8.2 ),
+"transitions": PoolRealArray( 1, 1, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 80, -100 ), Vector2( 80, -20 ), Vector2( 80, 31 ) ]
+}
+
 [sub_resource type="Animation" id=10]
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/path = NodePath("../white_fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -308,7 +347,7 @@ tracks/0/keys = {
 resource_name = "fade"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("../ColorRect:color")
+tracks/0/path = NodePath("../white_fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -331,22 +370,67 @@ tracks/1/keys = {
 "values": [  ]
 }
 
-[sub_resource type="BitmapFont" id=12]
+[sub_resource type="Animation" id=17]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.6, 0 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
-[sub_resource type="Theme" id=13]
-default_font = SubResource( 12 )
+[sub_resource type="Animation" id=18]
+resource_name = "fade_out"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.9 ),
+"transitions": PoolRealArray( 1, 1.31951 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.27451, 0.27451, 0.27451, 0 ) ]
+}
 
-[sub_resource type="DynamicFont" id=14]
-size = 9
-font_data = ExtResource( 14 )
+[sub_resource type="Animation" id=20]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("bgm:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 8, -8 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.125, 0.125 )
+script = SubResource( 15 )
 
 [node name="sky" type="Sprite" parent="."]
 position = Vector2( 80, 70 )
@@ -392,29 +476,33 @@ texture = ExtResource( 8 )
 position = Vector2( 80, -70 )
 texture = ExtResource( 8 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim_clouds" type="AnimationPlayer" parent="."]
 anims/Clouds = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/Trees = SubResource( 3 )
-script = ExtResource( 6 )
+script = SubResource( 16 )
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+[node name="anim_trees" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 5 )
 anims/Trees = SubResource( 4 )
 "anims/Trees 2" = SubResource( 3 )
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+[node name="anim_mountains" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 6 )
 anims/mountains = SubResource( 7 )
 
-[node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+[node name="anim_snow" type="AnimationPlayer" parent="."]
 anims/Flakes = SubResource( 8 )
 anims/RESET = SubResource( 9 )
 
-[node name="AnimationPlayer5" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimationPlayer4")
-anims/RESET = SubResource( 10 )
-anims/fade = SubResource( 11 )
+[node name="logo_anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Logo")
+autoplay = "fall"
+anims/fall = SubResource( 19 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 80, -92.6973 )
+texture = ExtResource( 15 )
 
 [node name="menu" type="HBoxContainer" parent="."]
 margin_left = 24.0
@@ -431,47 +519,58 @@ margin_bottom = 12.0
 texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 
-[node name="CreditsButton" type="TextureButton" parent="menu"]
+[node name="AboutButton" type="TextureButton" parent="menu"]
 margin_left = 58.0
 margin_right = 112.0
 margin_bottom = 12.0
 texture_normal = ExtResource( 11 )
 texture_hover = ExtResource( 12 )
 
+[node name="ButtonText" type="Sprite" parent="menu"]
+position = Vector2( 56, 8 )
+texture = ExtResource( 6 )
+
 [node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 38.0
-margin_top = 64.0
-margin_right = 81.0
-margin_bottom = 82.0
-theme = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
-text = "START"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="transition" type="AnimationPlayer" parent="."]
+root_node = NodePath("../anim_snow")
+anims/RESET = SubResource( 10 )
+anims/fade = SubResource( 11 )
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 93.0
-margin_top = 64.0
-margin_right = 136.0
-margin_bottom = 82.0
-theme = SubResource( 13 )
-custom_fonts/font = SubResource( 14 )
-text = "CREDITS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="white_fade" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color( 1, 1, 1, 0 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="fade" type="AnimationPlayer" parent="."]
+root_node = NodePath("../black")
+autoplay = "fade_out"
+method_call_mode = 1
+anims/RESET = SubResource( 17 )
+anims/fade_out = SubResource( 18 )
+
+[node name="black" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = -2.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fade_bgm" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
+anims/fade_out = SubResource( 20 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="fade_bgm"]
+stream = ExtResource( 14 )
+autoplay = true
 
 [connection signal="pressed" from="menu/StartButton" to="." method="_on_StartButton_pressed"]

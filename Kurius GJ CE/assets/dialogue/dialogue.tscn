@@ -1,26 +1,51 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://assets/dialogue/textbox.png" type="Texture" id=2]
 [ext_resource path="res://assets/Abaddon Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/dialogue/portraits/player_n.png" type="Texture" id=4]
 [ext_resource path="res://assets/dialogue/portraits/gran.png" type="Texture" id=5]
+[ext_resource path="res://assets/dialogue/portraits/player_smile.png" type="Texture" id=6]
+[ext_resource path="res://assets/dialogue/portraits/player_grumpy.png" type="Texture" id=7]
+[ext_resource path="res://assets/dialogue/portraits/player_sad.png" type="Texture" id=8]
+[ext_resource path="res://assets/dialogue/portraits/player_blush.png" type="Texture" id=9]
+[ext_resource path="res://assets/dialogue/portraits/player_angry.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "player_b",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "player_g",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "gran",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "New Anim",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "player_n",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "player_a",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "player_s",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "player_f",
 "speed": 5.0
 } ]
 
@@ -59,10 +84,10 @@ __meta__ = {
 }
 
 [node name="faces" type="AnimatedSprite" parent="textbox/portrait"]
-position = Vector2( 35.25, 35.5 )
-scale = Vector2( 0.163991, 0.206395 )
+position = Vector2( 35.5, 35.5 )
+scale = Vector2( 2.21875, 2.21875 )
 frames = SubResource( 3 )
-animation = "New Anim"
+animation = "player_a"
 
 [node name="dialogue" type="RichTextLabel" parent="textbox"]
 margin_left = 82.0

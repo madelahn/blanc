@@ -13,7 +13,7 @@ script/source = "extends Camera2D
 script = ExtResource( 4 )
 
 [node name="BgPuzzle" type="Sprite" parent="."]
-position = Vector2( 161.571, 140 )
+position = Vector2( 160, 140 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
@@ -25,11 +25,11 @@ script = SubResource( 1 )
 
 [node name="Level" type="Label" parent="."]
 margin_left = 10.0
-margin_top = 5.0
+margin_top = 4.0
 margin_right = 312.0
-margin_bottom = 29.0
+margin_bottom = 28.0
 theme = ExtResource( 3 )
-text = "Level 4 - Cum"
+text = "Level 4 - Ribbon"
 align = 1
 valign = 1
 __meta__ = {
@@ -43,13 +43,13 @@ position = Vector2( 58, 56 )
 position = Vector2( 139, 56 )
 
 [node name="B3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 58, 138 )
+position = Vector2( 58, 139 )
 
 [node name="B4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 139, 138 )
+position = Vector2( 139, 139 )
 
 [node name="R0" type="Label" parent="."]
-margin_left = 58.0
+margin_left = 24.0
 margin_top = 88.0
 margin_right = 88.0
 margin_bottom = 104.0
@@ -75,7 +75,7 @@ __meta__ = {
 }
 
 [node name="R2" type="Label" parent="."]
-margin_left = 58.0
+margin_left = 24.0
 margin_top = 120.0
 margin_right = 88.0
 margin_bottom = 136.0
@@ -101,7 +101,7 @@ __meta__ = {
 }
 
 [node name="R4" type="Label" parent="."]
-margin_left = 50.0
+margin_left = 24.0
 margin_top = 152.0
 margin_right = 88.0
 margin_bottom = 168.0
@@ -114,10 +114,10 @@ __meta__ = {
 }
 
 [node name="R5" type="Label" parent="."]
-margin_left = 54.0
-margin_top = 170.0
+margin_left = 32.0
+margin_top = 171.0
 margin_right = 88.0
-margin_bottom = 186.0
+margin_bottom = 187.0
 theme = ExtResource( 3 )
 text = "3 2 3"
 align = 2
@@ -127,10 +127,10 @@ __meta__ = {
 }
 
 [node name="R6" type="Label" parent="."]
-margin_left = 58.0
-margin_top = 185.0
-margin_right = 88.0
-margin_bottom = 201.0
+margin_left = 56.0
+margin_top = 187.0
+margin_right = 86.0
+margin_bottom = 203.0
 theme = ExtResource( 3 )
 text = "1 2 1"
 align = 2
@@ -140,10 +140,10 @@ __meta__ = {
 }
 
 [node name="R7" type="Label" parent="."]
-margin_left = 58.0
-margin_top = 201.0
-margin_right = 88.0
-margin_bottom = 217.0
+margin_left = 56.0
+margin_top = 203.0
+margin_right = 86.0
+margin_bottom = 219.0
 theme = ExtResource( 3 )
 text = "1 2 1"
 align = 2
@@ -154,9 +154,9 @@ __meta__ = {
 
 [node name="R8" type="Label" parent="."]
 margin_left = 40.0
-margin_top = 217.0
+margin_top = 219.0
 margin_right = 88.0
-margin_bottom = 233.0
+margin_bottom = 235.0
 theme = ExtResource( 3 )
 text = "1 4 1"
 align = 2
@@ -166,10 +166,10 @@ __meta__ = {
 }
 
 [node name="R9" type="Label" parent="."]
-margin_left = 58.0
-margin_top = 233.0
-margin_right = 88.0
-margin_bottom = 249.0
+margin_left = 40.0
+margin_top = 235.0
+margin_right = 86.0
+margin_bottom = 251.0
 theme = ExtResource( 3 )
 text = "3 3"
 align = 2
@@ -179,10 +179,10 @@ __meta__ = {
 }
 
 [node name="C0" type="Label" parent="."]
-margin_left = 90.0
-margin_top = 32.0
-margin_right = 106.0
-margin_bottom = 88.0
+margin_left = 89.0
+margin_top = 31.0
+margin_right = 105.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "5
 2"
@@ -193,10 +193,10 @@ __meta__ = {
 }
 
 [node name="C1" type="Label" parent="."]
-margin_left = 106.0
-margin_top = 24.0
-margin_right = 122.0
-margin_bottom = 104.0
+margin_left = 111.0
+margin_top = 31.0
+margin_right = 127.0
+margin_bottom = 101.0
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 3 )
 text = "2
@@ -204,17 +204,16 @@ text = "2
 1
 1
 1"
-align = 1
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="C2" type="Label" parent="."]
-margin_left = 122.0
-margin_top = 52.0
-margin_right = 138.0
-margin_bottom = 88.0
+margin_left = 121.0
+margin_top = 31.0
+margin_right = 137.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 2
@@ -226,10 +225,10 @@ __meta__ = {
 }
 
 [node name="C3" type="Label" parent="."]
-margin_left = 138.0
-margin_top = 52.0
-margin_right = 154.0
-margin_bottom = 88.0
+margin_left = 137.0
+margin_top = 31.0
+margin_right = 153.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 2
@@ -241,10 +240,10 @@ __meta__ = {
 }
 
 [node name="C4" type="Label" parent="."]
-margin_left = 154.0
-margin_top = 56.0
-margin_right = 170.0
-margin_bottom = 88.0
+margin_left = 153.0
+margin_top = 31.0
+margin_right = 169.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 4"
@@ -255,10 +254,10 @@ __meta__ = {
 }
 
 [node name="C5" type="Label" parent="."]
-margin_left = 170.0
-margin_top = 56.0
-margin_right = 186.0
-margin_bottom = 88.0
+margin_left = 169.0
+margin_top = 31.0
+margin_right = 185.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 4"
@@ -269,10 +268,10 @@ __meta__ = {
 }
 
 [node name="C6" type="Label" parent="."]
-margin_left = 186.0
-margin_top = 52.0
-margin_right = 202.0
-margin_bottom = 88.0
+margin_left = 185.0
+margin_top = 31.0
+margin_right = 201.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 2
@@ -284,10 +283,10 @@ __meta__ = {
 }
 
 [node name="C7" type="Label" parent="."]
-margin_left = 202.0
-margin_top = 52.0
-margin_right = 218.0
-margin_bottom = 88.0
+margin_left = 201.0
+margin_top = 31.0
+margin_right = 217.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "1
 2
@@ -300,9 +299,9 @@ __meta__ = {
 
 [node name="C8" type="Label" parent="."]
 margin_left = 224.0
-margin_top = 27.0
+margin_top = 31.0
 margin_right = 240.0
-margin_bottom = 102.0
+margin_bottom = 100.0
 rect_scale = Vector2( 0.8, 0.8 )
 theme = ExtResource( 3 )
 text = "2
@@ -317,9 +316,9 @@ __meta__ = {
 
 [node name="C9" type="Label" parent="."]
 margin_left = 234.0
-margin_top = 32.0
+margin_top = 31.0
 margin_right = 250.0
-margin_bottom = 88.0
+margin_bottom = 87.0
 theme = ExtResource( 3 )
 text = "5
 2"

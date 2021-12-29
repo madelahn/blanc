@@ -48,8 +48,3 @@ func _on_Box_mouse_entered():
 func _on_Box_mouse_exited():
 	$hover.animation = 'none'
 	pass
-
-
-func set_active(active):
-	set_process(active)
-	set_process_input(active)

@@ -5,8 +5,6 @@ var gridy = 10
 
 var win = false
 
-func _ready():
-	find_dialogue()
 
 func _process(_delta):
 	check_solution()
@@ -20,7 +18,7 @@ onready var solution = [ [0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
 						 [0, 0, 1, 0, 1, 1, 0, 1, 0, 0],
 						 [0, 1, 0, 0, 1, 1, 0, 0, 1, 0],
 						 [1, 0, 0, 1, 1, 1, 1, 0, 0, 1],
-						 [1, 1, 1, 0, 0, 0, 0, 1, 1, 1],
+						 [1, 1, 1, 0, 0, 0, 0, 1, 1, 1]
 						]
 						
 onready var board = [ [$B1/'00', $B1/'01', $B1/'02', $B1/'03', $B1/'04', $B2/'00', $B2/'01', $B2/'02', $B2/'03', $B2/'04'],
@@ -36,25 +34,16 @@ onready var board = [ [$B1/'00', $B1/'01', $B1/'02', $B1/'03', $B1/'04', $B2/'00
 					]
 
 
-# Run intro dialogue.
-func find_dialogue():
-	var l1_dialogue = get_node_or_null('dialogue')
-	
-	if l1_dialogue:
-		l1_dialogue.play()
-
-
 func check_solution():
 	if win == false:
 		var new_board = []
 		
-		for x in range(gridx):
+		for y in range(gridy):
 			var new_row = []
 			
-			for y in range(gridy):
-				new_row.append(board[x][y].filled)
+			for x in range(gridx):
+				new_row.append(board[y][x].filled)
 			new_board.append(new_row)
-		print(new_board)
 
 
 		if new_board == solution:

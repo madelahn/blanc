@@ -1,37 +1,23 @@
 extends Control
 
+onready var anim_clouds = $anim_clouds
+onready var anim_trees = $anim_trees
+onready var anim_mountains = $anim_mountains
+onready var anim_snow = $anim_snow
+onready var transition = $transition
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-onready var animation = $AnimationPlayer
-onready var animation2 = $AnimationPlayer2
-onready var animation3 = $AnimationPlayer3
-onready var animation4 = $AnimationPlayer4
-onready var animation5 = $AnimationPlayer5
-
-onready var current_level = $menu
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	animation.play("Clouds")
-	animation2.play("Trees 2")
-	animation3.play("mountains")
-	animation4.play("Flakes")
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	anim_clouds.play("Clouds")
+	anim_trees.play("Trees 2")
+	anim_mountains.play("mountains")
+	anim_snow.play("Flakes")
 
 
 func _on_StartButton_pressed():
 	$ButtonClickedSound.play()
-	animation5.play("fade")
+	transition.play("fade")
+	$fade_bgm.play("fade_out")
 	if $ButtonClickedSound.playing:
 		yield($ButtonClickedSound, "finished")
-		print("stan looona")
 	get_tree().change_scene("res://test.tscn")
 	

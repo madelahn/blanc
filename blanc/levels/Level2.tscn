@@ -120,7 +120,7 @@ autoplay = true
 anims/fade = SubResource( 8 )
 
 [node name="BgPuzzle" type="Sprite" parent="."]
-position = Vector2( 130, 112.75 )
+position = Vector2( 129, 112.75 )
 scale = Vector2( 1.61786, 1.61786 )
 texture = ExtResource( 2 )
 

@@ -171,10 +171,10 @@ __meta__ = {
 }
 
 [node name="R0" type="Label" parent="Panel"]
-margin_left = 54.0
-margin_top = 70.0
-margin_right = 118.0
-margin_bottom = 86.0
+margin_left = 53.0
+margin_top = 74.0
+margin_right = 117.0
+margin_bottom = 90.0
 theme = ExtResource( 2 )
 text = "2"
 align = 2
@@ -184,10 +184,10 @@ __meta__ = {
 }
 
 [node name="R1" type="Label" parent="Panel"]
-margin_left = 54.0
-margin_top = 86.0
-margin_right = 118.0
-margin_bottom = 102.0
+margin_left = 53.0
+margin_top = 90.0
+margin_right = 117.0
+margin_bottom = 106.0
 theme = ExtResource( 2 )
 text = "0"
 align = 2
@@ -197,10 +197,10 @@ __meta__ = {
 }
 
 [node name="R2" type="Label" parent="Panel"]
-margin_left = 54.0
-margin_top = 102.0
-margin_right = 118.0
-margin_bottom = 118.0
+margin_left = 53.0
+margin_top = 106.0
+margin_right = 117.0
+margin_bottom = 122.0
 theme = ExtResource( 2 )
 text = "4"
 align = 2
@@ -210,10 +210,10 @@ __meta__ = {
 }
 
 [node name="R3" type="Label" parent="Panel"]
-margin_left = 54.0
-margin_top = 118.0
-margin_right = 118.0
-margin_bottom = 134.0
+margin_left = 53.0
+margin_top = 122.0
+margin_right = 117.0
+margin_bottom = 138.0
 theme = ExtResource( 2 )
 text = "4"
 align = 2
@@ -223,10 +223,10 @@ __meta__ = {
 }
 
 [node name="R4" type="Label" parent="Panel"]
-margin_left = 54.0
-margin_top = 134.0
-margin_right = 118.0
-margin_bottom = 150.0
+margin_left = 53.0
+margin_top = 138.0
+margin_right = 117.0
+margin_bottom = 154.0
 theme = ExtResource( 2 )
 text = "6"
 align = 2
@@ -237,9 +237,9 @@ __meta__ = {
 
 [node name="R5" type="Label" parent="Panel"]
 margin_left = 61.0
-margin_top = 153.0
+margin_top = 157.0
 margin_right = 117.0
-margin_bottom = 169.0
+margin_bottom = 173.0
 rect_pivot_offset = Vector2( 103, 50 )
 theme = ExtResource( 2 )
 text = "1 4 1"
@@ -250,10 +250,10 @@ __meta__ = {
 }
 
 [node name="R6" type="Label" parent="Panel"]
-margin_left = 86.0
-margin_top = 169.0
-margin_right = 118.0
-margin_bottom = 185.0
+margin_left = 85.0
+margin_top = 173.0
+margin_right = 117.0
+margin_bottom = 189.0
 rect_pivot_offset = Vector2( 79, 34 )
 theme = ExtResource( 2 )
 text = "3 1 2"
@@ -264,10 +264,10 @@ __meta__ = {
 }
 
 [node name="R7" type="Label" parent="Panel"]
-margin_left = 86.0
-margin_top = 185.0
-margin_right = 116.0
-margin_bottom = 201.0
+margin_left = 87.0
+margin_top = 189.0
+margin_right = 117.0
+margin_bottom = 205.0
 rect_pivot_offset = Vector2( 79, 18 )
 theme = ExtResource( 2 )
 text = "10"
@@ -278,10 +278,10 @@ __meta__ = {
 }
 
 [node name="R8" type="Label" parent="Panel"]
-margin_left = 68.0
-margin_top = 201.0
-margin_right = 116.0
-margin_bottom = 217.0
+margin_left = 69.0
+margin_top = 206.0
+margin_right = 117.0
+margin_bottom = 222.0
 rect_pivot_offset = Vector2( 95, 2 )
 theme = ExtResource( 2 )
 text = "8"
@@ -292,10 +292,10 @@ __meta__ = {
 }
 
 [node name="R9" type="Label" parent="Panel"]
-margin_left = 70.0
-margin_top = 217.0
-margin_right = 116.0
-margin_bottom = 233.0
+margin_left = 71.0
+margin_top = 222.0
+margin_right = 117.0
+margin_bottom = 238.0
 rect_pivot_offset = Vector2( 95, -14 )
 theme = ExtResource( 2 )
 text = "10"
@@ -306,10 +306,10 @@ __meta__ = {
 }
 
 [node name="R10" type="Label" parent="Panel"]
-margin_left = 61.0
-margin_top = 237.0
-margin_right = 117.0
-margin_bottom = 253.0
+margin_left = 62.0
+margin_top = 241.0
+margin_right = 118.0
+margin_bottom = 257.0
 rect_pivot_offset = Vector2( 103, 50 )
 theme = ExtResource( 2 )
 text = "9"
@@ -320,10 +320,10 @@ __meta__ = {
 }
 
 [node name="R11" type="Label" parent="Panel"]
-margin_left = 86.0
-margin_top = 253.0
-margin_right = 116.0
-margin_bottom = 269.0
+margin_left = 87.0
+margin_top = 257.0
+margin_right = 117.0
+margin_bottom = 273.0
 rect_pivot_offset = Vector2( 79, 34 )
 theme = ExtResource( 2 )
 text = "7"
@@ -334,10 +334,10 @@ __meta__ = {
 }
 
 [node name="R12" type="Label" parent="Panel"]
-margin_left = 86.0
-margin_top = 269.0
-margin_right = 116.0
-margin_bottom = 285.0
+margin_left = 87.0
+margin_top = 273.0
+margin_right = 117.0
+margin_bottom = 289.0
 rect_pivot_offset = Vector2( 79, 18 )
 theme = ExtResource( 2 )
 text = "9"
@@ -348,10 +348,10 @@ __meta__ = {
 }
 
 [node name="R13" type="Label" parent="Panel"]
-margin_left = 68.0
-margin_top = 285.0
-margin_right = 116.0
-margin_bottom = 301.0
+margin_left = 69.0
+margin_top = 289.0
+margin_right = 117.0
+margin_bottom = 305.0
 rect_pivot_offset = Vector2( 95, 2 )
 theme = ExtResource( 2 )
 text = "9"
@@ -362,10 +362,10 @@ __meta__ = {
 }
 
 [node name="R14" type="Label" parent="Panel"]
-margin_left = 70.0
-margin_top = 301.0
-margin_right = 116.0
-margin_bottom = 317.0
+margin_left = 71.0
+margin_top = 305.0
+margin_right = 117.0
+margin_bottom = 321.0
 rect_pivot_offset = Vector2( 95, -14 )
 theme = ExtResource( 2 )
 text = "1 1"

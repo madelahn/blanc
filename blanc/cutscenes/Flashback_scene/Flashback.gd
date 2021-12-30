@@ -30,6 +30,7 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed and $dialogue/textbox.visible == false:
 				$dialogue/textbox.visible = false
+				$bgm_fade.play("fade_out")
 				$start_levels.start()
 
 

@@ -1,10 +1,26 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://cutscenes/Flashback_scene/Flashback.gd" type="Script" id=1]
 [ext_resource path="res://cutscenes/Flashback_scene/Flackback_pics/bg_sprites.png" type="Texture" id=2]
 [ext_resource path="res://assets/audio/Flashback.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/audio/Contemplation.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/dialogue/dialogue.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("contemplation:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -119,6 +135,9 @@ hframes = 6
 [node name="flashback_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
+[node name="bgm_fade" type="AnimationPlayer" parent="."]
+anims/fade_out = SubResource( 8 )
+
 [node name="contemplation" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
@@ -155,6 +174,7 @@ script = SubResource( 7 )
 one_shot = true
 
 [node name="start_levels" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="dialogue" parent="." instance=ExtResource( 5 )]

@@ -31,7 +31,7 @@ func start_pan():
 	$bg_pan.queue("anim_blanc")
 	yield($bg_pan, "animation_finished")
 	
-	$end.set_wait_time(8)
+	$end.set_wait_time(10)
 	$end.start()
 	fade()
 

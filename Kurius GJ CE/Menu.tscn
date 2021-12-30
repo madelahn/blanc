@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://menu/sky.png" type="Texture" id=1]
 [ext_resource path="res://menu/clouds.png" type="Texture" id=2]
@@ -15,6 +15,12 @@
 [ext_resource path="res://assets/audio/Start.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/audio/Blanc.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/logo.png" type="Texture" id=15]
+[ext_resource path="res://Menu/bg_credits.png" type="Texture" id=16]
+[ext_resource path="res://assets/audio/Credits.wav" type="AudioStream" id=17]
+[ext_resource path="res://Menu/blueButton.png" type="Texture" id=18]
+[ext_resource path="res://Menu/blueButtonHovered.png" type="Texture" id=19]
+[ext_resource path="res://Menu/back_button_text.png" type="Texture" id=20]
+[ext_resource path="res://assets/Peepo.ttf" type="DynamicFontData" id=21]
 
 [sub_resource type="GDScript" id=15]
 script/source = "extends Camera2D
@@ -370,6 +376,22 @@ tracks/1/keys = {
 "values": [  ]
 }
 
+[sub_resource type="Animation" id=21]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../white_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="Animation" id=17]
 length = 6.0
 tracks/0/type = "value"
@@ -400,6 +422,11 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.27451, 0.27451, 0.27451, 0 ) ]
 }
+
+[sub_resource type="DynamicFont" id=22]
+size = 9
+extra_spacing_top = -6
+font_data = ExtResource( 21 )
 
 [sub_resource type="Animation" id=20]
 resource_name = "fade_out"
@@ -530,13 +557,75 @@ texture_hover = ExtResource( 12 )
 position = Vector2( 56, 8 )
 texture = ExtResource( 6 )
 
-[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+
+[node name="CreditsSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
 
 [node name="transition" type="AnimationPlayer" parent="."]
 root_node = NodePath("../anim_snow")
 anims/RESET = SubResource( 10 )
 anims/fade = SubResource( 11 )
+anims/fade_out = SubResource( 21 )
+
+[node name="fade" type="AnimationPlayer" parent="."]
+root_node = NodePath("../black")
+autoplay = "fade_out"
+method_call_mode = 1
+anims/RESET = SubResource( 17 )
+anims/fade_out = SubResource( 18 )
+
+[node name="bg_credits" type="Sprite" parent="."]
+visible = false
+position = Vector2( 80, 70 )
+texture = ExtResource( 16 )
+
+[node name="CreditsHbox" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 53.0
+margin_top = 125.0
+margin_right = 107.0
+margin_bottom = 137.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="CreditsHbox"]
+visible = false
+margin_right = 54.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
+
+[node name="BackButtonText" type="Sprite" parent="CreditsHbox"]
+visible = false
+position = Vector2( 25, -31 )
+texture = ExtResource( 20 )
+
+[node name="CreditsText" type="Label" parent="."]
+visible = false
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 155.0
+margin_bottom = 117.0
+custom_fonts/font = SubResource( 22 )
+text = "Blanc was created for the Kurius 
+hacks Christmas Edition GameJam
+
+Catriona Nguyen - Lead artist
+Giovanna Gerada - Animation, art & 
+                           programming
+Madeline Ahn - Lead programmer
+Peter Trinh - Sound design & music
+
+Font credits to:
+Andr - Peepo Regular
+Nathan Scott - Abaddon
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="white_fade" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -546,13 +635,6 @@ color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="fade" type="AnimationPlayer" parent="."]
-root_node = NodePath("../black")
-autoplay = "fade_out"
-method_call_mode = 1
-anims/RESET = SubResource( 17 )
-anims/fade_out = SubResource( 18 )
 
 [node name="black" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -574,3 +656,5 @@ stream = ExtResource( 14 )
 autoplay = true
 
 [connection signal="pressed" from="menu/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="menu/AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="CreditsHbox/BackButton" to="." method="_on_BackButton_pressed"]

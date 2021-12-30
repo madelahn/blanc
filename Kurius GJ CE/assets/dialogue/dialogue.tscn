@@ -13,19 +13,14 @@
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "player_b",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "player_g",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "gran",
+"name": "player_b",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -41,6 +36,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "player_s",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gran",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -87,7 +87,7 @@ __meta__ = {
 position = Vector2( 35.5, 35.5 )
 scale = Vector2( 2.21875, 2.21875 )
 frames = SubResource( 3 )
-animation = "player_a"
+animation = "player_n"
 
 [node name="dialogue" type="RichTextLabel" parent="textbox"]
 margin_left = 82.0

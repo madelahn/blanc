@@ -1,0 +1,348 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/BGPuzzle.png" type="Texture" id=1]
+[ext_resource path="res://picross.tres" type="Theme" id=2]
+[ext_resource path="res://5x5.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Level3.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/Presents.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/dialogue/dialogue.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BgPuzzle" type="Sprite" parent="."]
+position = Vector2( 160, 140 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="camera" type="Camera2D" parent="."]
+scale = Vector2( 2, 2 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.25, 0.25 )
+script = SubResource( 1 )
+
+[node name="Level" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 4.0
+margin_right = 312.0
+margin_bottom = 28.0
+theme = ExtResource( 2 )
+text = "Level 3 - Presents"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60, 55 )
+
+[node name="B2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 141, 55 )
+
+[node name="B3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60, 138 )
+
+[node name="B4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 141, 138 )
+
+[node name="R0" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 87.0
+margin_right = 90.0
+margin_bottom = 103.0
+theme = ExtResource( 2 )
+text = "2 2"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R1" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 103.0
+margin_right = 90.0
+margin_bottom = 119.0
+theme = ExtResource( 2 )
+text = "8"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R2" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 119.0
+margin_right = 90.0
+margin_bottom = 135.0
+theme = ExtResource( 2 )
+text = "3 2 3"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R3" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 135.0
+margin_right = 90.0
+margin_bottom = 151.0
+theme = ExtResource( 2 )
+text = "2 4 2"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R4" type="Label" parent="."]
+margin_left = 26.0
+margin_top = 151.0
+margin_right = 90.0
+margin_bottom = 167.0
+theme = ExtResource( 2 )
+text = "1 7 1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R5" type="Label" parent="."]
+margin_left = 33.0
+margin_top = 170.0
+margin_right = 89.0
+margin_bottom = 186.0
+theme = ExtResource( 2 )
+text = "1 7 1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R6" type="Label" parent="."]
+margin_left = 59.0
+margin_top = 186.0
+margin_right = 89.0
+margin_bottom = 202.0
+theme = ExtResource( 2 )
+text = "1 7 1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R7" type="Label" parent="."]
+margin_left = 59.0
+margin_top = 202.0
+margin_right = 89.0
+margin_bottom = 218.0
+theme = ExtResource( 2 )
+text = "1 7 1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R8" type="Label" parent="."]
+margin_left = 41.0
+margin_top = 218.0
+margin_right = 89.0
+margin_bottom = 234.0
+theme = ExtResource( 2 )
+text = "8"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R9" type="Label" parent="."]
+margin_left = 43.0
+margin_top = 234.0
+margin_right = 89.0
+margin_bottom = 250.0
+theme = ExtResource( 2 )
+text = "6"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C0" type="Label" parent="."]
+margin_left = 91.0
+margin_top = 30.0
+margin_right = 107.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "6"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C1" type="Label" parent="."]
+margin_left = 107.0
+margin_top = 30.0
+margin_right = 123.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "3
+1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C8" type="Label" parent="."]
+margin_left = 220.0
+margin_top = 30.0
+margin_right = 236.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "3
+1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C2" type="Label" parent="."]
+margin_left = 123.0
+margin_top = 30.0
+margin_right = 139.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "3
+6"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C3" type="Label" parent="."]
+margin_left = 139.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "2
+7"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C4" type="Label" parent="."]
+margin_left = 155.0
+margin_top = 30.0
+margin_right = 171.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "9"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C5" type="Label" parent="."]
+margin_left = 171.0
+margin_top = 30.0
+margin_right = 187.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "9"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C6" type="Label" parent="."]
+margin_left = 187.0
+margin_top = 30.0
+margin_right = 203.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "2
+7"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C7" type="Label" parent="."]
+margin_left = 203.0
+margin_top = 30.0
+margin_right = 219.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "3
+6"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C9" type="Label" parent="."]
+margin_left = 236.0
+margin_top = 30.0
+margin_right = 252.0
+margin_bottom = 86.0
+theme = ExtResource( 2 )
+text = "6"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fade_bgm" type="AnimationPlayer" parent="."]
+root_node = NodePath("bgm")
+anims/fade_out = SubResource( 2 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="fade_bgm"]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="dialogue" parent="." instance=ExtResource( 6 )]
+offset = Vector2( 145, 10 )
+scale = Vector2( 2.5, 2.5 )
+transform = Transform2D( 2.5, 0, 0, 2.5, 145, 10 )
+dialogue = "res://assets/dialogue/json/level3.json"

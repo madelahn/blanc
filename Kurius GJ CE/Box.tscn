@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/grid/fill.png" type="Texture" id=4]
 [ext_resource path="res://assets/grid/hover.png" type="Texture" id=5]
 [ext_resource path="res://assets/audio/Button_Click.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/audio/Mistake.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Mark.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -15,14 +15,14 @@ animations = [ {
 "name": "filled",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "marked",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "blank",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "marked",
 "speed": 5.0
 } ]
 
@@ -65,6 +65,8 @@ volume_db = -10.0
 
 [node name="right_click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -5.874
+pitch_scale = 0.91
 
 [connection signal="mouse_entered" from="." to="." method="_on_Box_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Box_mouse_exited"]

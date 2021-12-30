@@ -571,6 +571,7 @@ anims/fade_out = SubResource( 20 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="fade_bgm"]
 stream = ExtResource( 14 )
+volume_db = -18.6667
 autoplay = true
 
 [connection signal="pressed" from="menu/StartButton" to="." method="_on_StartButton_pressed"]

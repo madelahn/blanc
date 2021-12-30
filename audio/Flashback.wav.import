@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Flashback.wav-5a0bb6bbbe25d4e3d955e49bef7b9e51.sample"
+
+[deps]
+
+source_file="res://assets/audio/Flashback.wav"
+dest_files=[ "res://.import/Flashback.wav-5a0bb6bbbe25d4e3d955e49bef7b9e51.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

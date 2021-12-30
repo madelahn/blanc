@@ -1,0 +1,431 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://cutscenes/Ending_Scene/Ending_Scene.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/Blanc.ogg" type="AudioStream" id=2]
+[ext_resource path="res://cutscenes/Ending_Scene/Ending_pics/snowflakes.png" type="Texture" id=3]
+[ext_resource path="res://cutscenes/Ending_Scene/Ending_pics/tim_sprites_night.png" type="Texture" id=4]
+[ext_resource path="res://cutscenes/Ending_Scene/Ending_pics/BGExtended_night.png" type="Texture" id=5]
+[ext_resource path="res://assets/logo.png" type="Texture" id=6]
+[ext_resource path="res://cutscenes/Ending_Scene/Ending_Scene.tres" type="Theme" id=7]
+[ext_resource path="res://assets/dialogue/dialogue.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flakes"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("snowFlakes1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, -70 ), Vector2( 80, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snowFlakes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ), Vector2( 80, 210 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("snowFlakes1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, -70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("snowFlakes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, 70 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=13]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 70 ), Vector2( 160, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Tim:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 116, 111 ), Vector2( 276, 111 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../blanc2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, -92.697 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../The End:custom_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "anim_blanc"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../blanc2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 2 ),
+"update": 0,
+"values": [ Vector2( 80, -92.697 ), Vector2( 80, 45 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../The End:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.8, 5.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "bg_pan"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 70 ), Vector2( 160, 70 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Tim:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 116, 111 ), Vector2( 276, 111 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "tim_wind1"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "tim_wind2"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "tim_wind3"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="GDScript" id=25]
+script/source = "extends Camera2D
+"
+
+[sub_resource type="Animation" id=26]
+resource_name = "fade_out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../blanc:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[node name="Ending Scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_extended" type="Sprite" parent="."]
+position = Vector2( 0, 70 )
+texture = ExtResource( 5 )
+
+[node name="Tim" type="Sprite" parent="."]
+position = Vector2( 116, 111 )
+texture = ExtResource( 4 )
+hframes = 6
+
+[node name="snowFlakes" type="Sprite" parent="."]
+position = Vector2( 80, 70 )
+texture = ExtResource( 3 )
+
+[node name="snowFlakes1" type="Sprite" parent="."]
+position = Vector2( 80, -70 )
+texture = ExtResource( 3 )
+
+[node name="blanc2" type="Sprite" parent="."]
+position = Vector2( 80, -92.697 )
+texture = ExtResource( 6 )
+
+[node name="The End" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 62.0
+margin_right = 110.0
+margin_bottom = 80.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "The End"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim_snow" type="AnimationPlayer" parent="."]
+anims/Flakes = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="transition" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+anims/RESET = SubResource( 3 )
+anims/fade_out = SubResource( 4 )
+
+[node name="bg_pan" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Background_extended")
+"anims/New Anim" = SubResource( 24 )
+anims/RESET = SubResource( 13 )
+anims/anim_blanc = SubResource( 23 )
+anims/bg_pan = SubResource( 14 )
+
+[node name="tim_wind" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Tim")
+anims/RESET = SubResource( 17 )
+anims/tim_wind1 = SubResource( 18 )
+anims/tim_wind2 = SubResource( 19 )
+anims/tim_wind3 = SubResource( 20 )
+
+[node name="transition2" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
+anims/fade = SubResource( 16 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blanc" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="dialogue" parent="." instance=ExtResource( 8 )]
+offset = Vector2( 145, 10 )
+scale = Vector2( 2.5, 2.5 )
+transform = Transform2D( 2.5, 0, 0, 2.5, 145, 10 )
+dialogue = "res://assets/dialogue/json/ending_scene.json"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.125, 0.125 )
+script = SubResource( 25 )
+
+[node name="end" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="go_menu" type="Timer" parent="."]
+
+[node name="fade_bgm" type="AnimationPlayer" parent="."]
+root_node = NodePath("../blanc")
+anims/fade_out = SubResource( 26 )
+
+[connection signal="timeout" from="Timer" to="." method="start_pan"]
+[connection signal="timeout" from="end" to="." method="_on_end_timeout"]
+[connection signal="timeout" from="end" to="." method="back_to_menu"]
+[connection signal="timeout" from="go_menu" to="." method="go_menu"]

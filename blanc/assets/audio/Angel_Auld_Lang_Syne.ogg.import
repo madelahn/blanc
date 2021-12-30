@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Angel_Auld_Lang_Syne.ogg-9c04364b45c1c6134a112b966b36256f.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Angel_Auld_Lang_Syne.ogg"
+dest_files=[ "res://.import/Angel_Auld_Lang_Syne.ogg-9c04364b45c1c6134a112b966b36256f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

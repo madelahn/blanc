@@ -1,0 +1,432 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://5x5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/BGPuzzle.png" type="Texture" id=2]
+[ext_resource path="res://picross.tres" type="Theme" id=3]
+[ext_resource path="res://levels/Level2.gd" type="Script" id=4]
+[ext_resource path="res://assets/dialogue/dialogue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/GJ_Tree.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/Tree.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Finish.wav" type="AudioStream" id=8]
+[ext_resource path="res://Menu.tres" type="Theme" id=9]
+[ext_resource path="res://Menu/continueButton_text.png" type="Texture" id=10]
+[ext_resource path="res://assets/audio/Credits.wav" type="AudioStream" id=11]
+[ext_resource path="res://Menu/blueButton.png" type="Texture" id=12]
+[ext_resource path="res://Menu/blueButtonHovered.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bgm:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+"
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 6.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "next_scene"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="solved" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="next_level" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="bgm_fade" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 8 )
+
+[node name="BgPuzzle" type="Sprite" parent="."]
+position = Vector2( 130, 112.75 )
+scale = Vector2( 1.61786, 1.61786 )
+texture = ExtResource( 2 )
+
+[node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.201, 0.201 )
+script = SubResource( 1 )
+
+[node name="Level 2" type="Label" parent="."]
+margin_top = 3.0
+margin_right = 249.0
+margin_bottom = 27.0
+theme = ExtResource( 3 )
+text = "Level 2 - Tree"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 10.0
+margin_top = 141.0
+margin_right = 22.0
+margin_bottom = 156.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C0" type="Label" parent="Panel"]
+margin_left = 73.0
+margin_top = -115.0
+margin_right = 89.0
+margin_bottom = -83.0
+rect_pivot_offset = Vector2( 8, 43 )
+theme = ExtResource( 3 )
+text = "2"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C1" type="Label" parent="Panel"]
+margin_left = 89.0
+margin_top = -115.0
+margin_right = 105.0
+margin_bottom = -83.0
+theme = ExtResource( 3 )
+text = "3
+1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C2" type="Label" parent="Panel"]
+margin_left = 105.0
+margin_top = -115.0
+margin_right = 121.0
+margin_bottom = -83.0
+theme = ExtResource( 3 )
+text = "10"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C3" type="Label" parent="Panel"]
+margin_left = 121.0
+margin_top = -115.0
+margin_right = 137.0
+margin_bottom = -83.0
+theme = ExtResource( 3 )
+text = "1
+3"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C4" type="Label" parent="Panel"]
+margin_left = 137.0
+margin_top = -115.0
+margin_right = 153.0
+margin_bottom = -83.0
+theme = ExtResource( 3 )
+text = "1"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R0" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -83.0
+margin_right = 71.0
+margin_bottom = -67.0
+theme = ExtResource( 3 )
+text = "1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R1" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -67.0
+margin_right = 71.0
+margin_bottom = -51.0
+theme = ExtResource( 3 )
+text = "1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R2" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -51.0
+margin_right = 71.0
+margin_bottom = -35.0
+theme = ExtResource( 3 )
+text = "1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R3" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -35.0
+margin_right = 71.0
+margin_bottom = -19.0
+theme = ExtResource( 3 )
+text = "3"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R4" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -19.0
+margin_right = 71.0
+margin_bottom = -3.0
+theme = ExtResource( 3 )
+text = "2"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R5" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = -2.0
+margin_right = 71.0
+margin_bottom = 14.0
+theme = ExtResource( 3 )
+text = "3"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R8" type="Label" parent="Panel"]
+margin_left = 30.0
+margin_top = 46.0
+margin_right = 70.0
+margin_bottom = 62.0
+theme = ExtResource( 3 )
+text = "1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R6" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = 14.0
+margin_right = 71.0
+margin_bottom = 30.0
+theme = ExtResource( 3 )
+text = "1 3"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R7" type="Label" parent="Panel"]
+margin_left = 31.0
+margin_top = 30.0
+margin_right = 71.0
+margin_bottom = 46.0
+theme = ExtResource( 3 )
+text = "4"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R9" type="Label" parent="Panel"]
+margin_left = 30.0
+margin_top = 62.0
+margin_right = 70.0
+margin_bottom = 78.0
+theme = ExtResource( 3 )
+text = "1"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 51, 26 )
+
+[node name="B2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 51, 108 )
+
+[node name="level_finish" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="continue" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 94.0
+margin_top = 200.0
+margin_right = 148.0
+margin_bottom = 212.0
+rect_scale = Vector2( 1.2, 1.2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="TextureButton" parent="continue"]
+margin_right = 54.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+
+[node name="text" type="Sprite" parent="continue"]
+position = Vector2( 27, 6 )
+texture = ExtResource( 10 )
+
+[node name="appear" type="AnimationPlayer" parent="."]
+root_node = NodePath("../GjTree")
+anims/RESET = SubResource( 5 )
+anims/appear = SubResource( 6 )
+
+[node name="GjTree" type="Sprite" parent="."]
+visible = false
+position = Vector2( 127, 116 )
+scale = Vector2( 3.8375, 3.8375 )
+texture = ExtResource( 6 )
+
+[node name="GoodWork" type="Label" parent="."]
+visible = false
+margin_left = 95.0
+margin_top = 20.0
+margin_right = 168.0
+margin_bottom = 38.0
+theme = ExtResource( 9 )
+text = "Nice Job!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogue" parent="." instance=ExtResource( 5 )]
+offset = Vector2( 145, 10 )
+scale = Vector2( 2.5, 2.5 )
+transform = Transform2D( 2.5, 0, 0, 2.5, 145, 10 )
+dialogue = "res://assets/dialogue/json/level2.json"
+
+[node name="transition" type="AnimationPlayer" parent="."]
+root_node = NodePath("../fade")
+anims/RESET = SubResource( 2 )
+anims/fade_out = SubResource( 3 )
+anims/next_scene = SubResource( 7 )
+
+[node name="fade" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_top = -0.999998
+margin_right = 99.0
+margin_bottom = 99.0
+rect_scale = Vector2( 100, 100 )
+mouse_filter = 2
+color = Color( 1, 1, 1, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="level_finish" to="." method="level_finish"]
+[connection signal="pressed" from="continue/button" to="." method="_on_button_pressed"]

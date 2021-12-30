@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ribbon.ogg-dd0f496cc6e3376c5fc0835119e0ef43.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Ribbon.ogg"
+dest_files=[ "res://.import/Ribbon.ogg-dd0f496cc6e3376c5fc0835119e0ef43.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

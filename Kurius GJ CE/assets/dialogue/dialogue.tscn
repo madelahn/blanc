@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://assets/dialogue/textbox.png" type="Texture" id=2]
@@ -10,12 +10,19 @@
 [ext_resource path="res://assets/dialogue/portraits/player_sad.png" type="Texture" id=8]
 [ext_resource path="res://assets/dialogue/portraits/player_blush.png" type="Texture" id=9]
 [ext_resource path="res://assets/dialogue/portraits/player_angry.png" type="Texture" id=10]
+[ext_resource path="res://assets/audio/Grandma.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/Tim.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "player_g",
+"name": "player_f",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gran",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -38,14 +45,9 @@ animations = [ {
 "name": "player_s",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "gran",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "player_f",
+"name": "player_g",
 "speed": 5.0
 } ]
 
@@ -100,3 +102,10 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="gran" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+pitch_scale = 1.2
+
+[node name="player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )

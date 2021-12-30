@@ -37,6 +37,15 @@ func next_line():
 		
 	$textbox/portrait/faces.animation = dialogues[line]['face']
 	$textbox/dialogue.text = dialogues[line]['text']
+	play_voice()
+
+
+# Plays the character's voices.
+func play_voice():
+	if dialogues[line]['face'] == 'gran':
+		$gran.play()
+	else:
+		$player.play()
 
 
 # Reads the json file.

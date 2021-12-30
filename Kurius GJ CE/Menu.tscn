@@ -12,7 +12,7 @@
 [ext_resource path="res://menu/greenButtonHovered.png" type="Texture" id=10]
 [ext_resource path="res://menu/redButton.png" type="Texture" id=11]
 [ext_resource path="res://menu/redButtonHovered.png" type="Texture" id=12]
-[ext_resource path="res://assets/audio/Button_Click.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/Start.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/audio/Blanc.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/logo.png" type="Texture" id=15]
 
@@ -387,7 +387,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=18]
 resource_name = "fade_out"
-length = 6.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -395,7 +395,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5.9 ),
+"times": PoolRealArray( 0, 7 ),
 "transitions": PoolRealArray( 1, 1.31951 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.27451, 0.27451, 0.27451, 0 ) ]
@@ -501,7 +501,7 @@ autoplay = "fall"
 anims/fall = SubResource( 19 )
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 80, -92.6973 )
+position = Vector2( 80, -100 )
 texture = ExtResource( 15 )
 
 [node name="menu" type="HBoxContainer" parent="."]
@@ -571,7 +571,6 @@ anims/fade_out = SubResource( 20 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="fade_bgm"]
 stream = ExtResource( 14 )
-volume_db = -18.6667
 autoplay = true
 
 [connection signal="pressed" from="menu/StartButton" to="." method="_on_StartButton_pressed"]

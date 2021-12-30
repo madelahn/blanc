@@ -11,7 +11,9 @@ func _on_StartButton_pressed():
 	$ButtonClickedSound.play()
 	$transition.play("fade")
 	$fade_bgm.play("fade_out")
+	
 	if $ButtonClickedSound.playing:
 		yield($ButtonClickedSound, "finished")
-	get_tree().change_scene("res://test.tscn")
+		
+	get_tree().change_scene("res://cutscenes/Opening_scene/Opening_scene.tscn")
 	

@@ -437,7 +437,7 @@ margin_right = 183.0
 margin_bottom = 71.0
 theme = ExtResource( 2 )
 text = "4
-8"
+7"
 align = 1
 valign = 2
 __meta__ = {
@@ -446,9 +446,9 @@ __meta__ = {
 
 [node name="C4" type="Label" parent="Panel"]
 margin_left = 183.0
-margin_top = 15.0
+margin_top = 14.0
 margin_right = 199.0
-margin_bottom = 71.0
+margin_bottom = 70.0
 theme = ExtResource( 2 )
 text = "1
 4

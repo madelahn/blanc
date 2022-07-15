@@ -18,6 +18,9 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=1120
+window/size/test_width=800
+window/size/test_height=600
+window/per_pixel_transparency/enabled=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -32,3 +35,4 @@ vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

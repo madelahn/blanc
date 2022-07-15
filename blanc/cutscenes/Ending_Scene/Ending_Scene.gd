@@ -27,6 +27,7 @@ func _input(event):
 
 
 func start_pan():
+	get_tree().get_root().set_disable_input(true)
 	$bg_pan.play("bg_pan")
 	$bg_pan.queue("anim_blanc")
 	yield($bg_pan, "animation_finished")
@@ -46,4 +47,5 @@ func fade():
 
 
 func go_menu():
+	get_tree().get_root().set_disable_input(false)
 	get_tree().change_scene("res://Menu.tscn")

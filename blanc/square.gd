@@ -2,6 +2,7 @@ extends Area2D
 
 # Checks if the square is filled or not
 var filled = 0
+var square = 'blank'
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
@@ -48,3 +49,8 @@ func _on_Box_mouse_entered():
 func _on_Box_mouse_exited():
 	$hover.animation = 'none'
 	pass
+
+# Reset the square.
+func _reset():
+	filled = 0
+	$square.animation = 'blank'

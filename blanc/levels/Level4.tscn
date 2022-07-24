@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://5x5.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/BGPuzzle.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Menu/blueButtonHovered.png" type="Texture" id=11]
 [ext_resource path="res://assets/audio/Finish.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/Credits.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/Peepo.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="Animation" id=6]
 resource_name = "fade_out"
@@ -66,6 +67,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+font_data = ExtResource( 14 )
 
 [sub_resource type="Animation" id=2]
 length = 6.0
@@ -492,6 +497,36 @@ position = Vector2( 161.25, 142.25 )
 scale = Vector2( 4.91, 4.91 )
 texture = ExtResource( 6 )
 
+[node name="Reset" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 262.0
+margin_right = 58.0
+margin_bottom = 294.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetButton" type="TextureButton" parent="Reset"]
+margin_right = 54.0
+margin_bottom = 12.0
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetLabel" type="Label" parent="."]
+margin_left = 18.0
+margin_top = 259.0
+margin_right = 72.0
+margin_bottom = 275.0
+custom_fonts/font = SubResource( 9 )
+text = "Reset"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="transition" type="AnimationPlayer" parent="."]
 root_node = NodePath("../fade")
 anims/RESET = SubResource( 2 )
@@ -518,3 +553,4 @@ dialogue = "res://assets/dialogue/json/level4.json"
 
 [connection signal="timeout" from="level_finish" to="." method="level_finish"]
 [connection signal="pressed" from="continue/button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Reset/ResetButton" to="." method="_on_ResetButton_pressed"]

@@ -89,3 +89,9 @@ func _on_button_pressed():
 	$transition.play("next_scene")
 	yield($transition, "animation_finished")
 	get_tree().change_scene("res://levels/Level3.tscn")
+
+
+func _on_ResetButton_pressed():
+	for row in board:
+		for box in row:
+			box._reset()
